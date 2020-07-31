@@ -1,7 +1,7 @@
 const jwt = require('jwt-simple')
 
 module.exports = app => {
-  const cfg = app.libs.config
+  const cfg = app.libs.configs.index
   const { Users } = app.db.models
   app.post('/token', (req, res) => {
     if (req.body.email && req.body.password) {

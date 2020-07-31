@@ -6,7 +6,7 @@ let db
 
 module.exports = app => {
   if (!db) {
-    const config = app.libs.config
+    const config = app.libs.configs.index
     const sequelize = new Sequelize(
       config.database,
       config.username,

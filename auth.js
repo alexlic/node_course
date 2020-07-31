@@ -3,7 +3,7 @@ const { Strategy, ExtractJwt } = require('passport-jwt')
 
 module.exports = app => {
   const { Users } = app.db.models
-  const cfg = app.libs.config
+  const cfg = app.libs.configs.index
   const params = {
     secretOrKey: cfg.jwtSecret,
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon babel-node index.js"
+    "start": "nodemon babel-node index.js",
+    "test": "NODE_ENV=test mocha test/**/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,5 +22,11 @@
     "passport-jwt": "^4.0.0",
     "sequelize": "^6.3.3",
     "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.1.0",
+    "supertest": "^4.0.2"
   }
 }
