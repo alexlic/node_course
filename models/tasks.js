@@ -5,6 +5,11 @@ module.exports = (sequelize, DataType) => {
       primaryKey: true,
       autoIncrement: true
     },
+    user_id: {
+      type: DataType.INTEGER,
+      allowNull: false,
+      validate: { notEmpty: true }
+    },
     title: {
       type: DataType.STRING,
       allowNull: false,
@@ -14,12 +19,6 @@ module.exports = (sequelize, DataType) => {
       type: DataType.BOOLEAN,
       allowNull: false,
       defaultValue: false
-    }
-  }, {
-    classMethods: {
-      associate: (models) => {
-        Tasks.belongsTo(models.Users)
-      }
     }
   })
   return Tasks

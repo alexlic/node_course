@@ -8,5 +8,7 @@ module.exports = {
     define: {
       underscored: true
     }
-  }
+  },
+  jwtSecret: 'Nta$K-Ap1',
+  jwtSession: { session: false }
 }
