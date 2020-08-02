@@ -1,14 +1,10 @@
-const supertest = require('supertest')
 const app = require('../../index.js')
+const request = require('supertest')(app)
 const { expect } = require('chai')
 
 describe('Routes: Token', () => {
   const { Users } = app.db.models
-  let request
   describe('POST /token', () => {
-    before(() => {
-      request = supertest(app)
-    })
     beforeEach(done => {
       Users.destroy({ where: {} })
         .then(() => Users.create({
