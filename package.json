@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon babel-node index.js",
-    "test": "NODE_ENV=test mocha test/**/*.js"
+    "start": "npm run apidoc && nodemon babel-node index.js",
+    "test": "NODE_ENV=test mocha test/**/*.js",
+    "apidoc": "apidoc -i routes/ -o public/apidoc"
+  },
+  "apidoc": {
+    "name": "Node Task API - Documentation",
+    "template": {
+      "forceLanguage": "en"
+    }
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +31,7 @@
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
+    "apidoc": "^0.24.0",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "mocha": "^8.1.0",
